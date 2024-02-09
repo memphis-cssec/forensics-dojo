@@ -1,0 +1,175 @@
+#/usr/bin/env python3
+
+import pathlib
+import random
+import csv
+
+global studentLineCSV
+
+def get_random_line(afile):
+    """Return a random line from the file (or default)."""
+    line = ''
+    for i, aline in enumerate(afile, start=1):
+        if random.randrange(i) == 0:  # random int [0..i)
+            line = aline
+    return line
+
+def readans(str):
+	return str.strip()
+
+with open("./flag") as f:
+    random.seed(f.read())
+
+
+datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+with open(datasetfname) as csvfile:
+#    print(get_random_line(csvfile))
+    global studentLineCSV
+    studentLineCSV = str(get_random_line(csvfile))
+
+#print("This is a flag-seeded random number: {}".format(random.randint(0, 1000)))
+#print(random.choice(dataset))
+#rline = random.choice(dataset)
+
+with open("./flag") as f:
+    print(f.read())
+    global flag
+    flag = str(f.read())
+
+
+def level1():
+    global studentLineCSV
+    print("level1")
+    studentLineArray = studentLineCSV.split(',')
+    print(studentLineCSV)
+    val = input("what borough did the accident on "+studentLineArray[1]+" at "+studentLineArray[2]+" take place?")
+    if val == studentLineArray[3]:
+        print("TRUE")
+        level2()
+    else:
+        print("try again")
+        level1()
+
+def wordCount(word):
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    with open(datasetfname) as csvfile:
+         csvfile = csvfile.read()     
+         return csvfile.count(word)
+
+def level2():
+    global studentLineCSV
+    print("level2") 
+    studentLineArray = studentLineCSV.split(',')
+    print(str(wordCount(studentLineArray[3]))+" is the answer")
+    val = input("how many times does "+studentLineArray[3]+" appear in the doc?")
+    if int(val) == int(wordCount(studentLineArray[3])):
+        print("TRUE")
+        level3()
+    else:
+        print("try again")
+        level2()
+
+#how many rows share the year?
+def level3():
+    print("level3")
+    global studentLineCSV
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    studentLineArray = studentLineCSV.split(',')
+    count = 0 
+    date = studentLineArray[1]
+    date = date[-4:]
+    with open(datasetfname) as csvfile:
+        readerObj = csv.reader(csvfile)
+        for row in readerObj:
+            rowString = row[1]
+            if date in rowString:
+                count += 1
+
+    print("the answer is "+ str(count)) 
+    val = input("how many rows share the same date as "+studentLineArray[1]+" ?")
+   
+    if int(val) == count:
+        print("True")
+        level4()
+    else:
+        print("try again")
+        level3()    
+
+def level4():
+    print("level4")
+    global studentLineCSV
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    studentLineArray = studentLineCSV.split(',')
+    count = 0 
+    date = studentLineArray[1]
+    date = date[-4:]
+    city = studentLineArray[3]
+    with open(datasetfname) as csvfile:
+        readerObj = csv.reader(csvfile)
+        for row in readerObj:
+           rowString = row[1]
+           if date in rowString:
+               if city in row[3]:
+                   count += 1  
+    
+    print("the answer is "+str(count))
+    val = input("how many rows have the same date and same city?")
+    if int(val) == count:
+        print("True")
+        level5()
+    else:
+        print("try again")
+        level4()     
+
+def level5():
+    print("level 5")
+    global studentLineCSV
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    studentLineArray = studentLineCSV.split(',')
+    count = 0 
+    date = studentLineArray[1]
+    date = date[-4:]
+    with open(datasetfname) as csvfile:
+        readerObj = csv.reader(csvfile)
+        for row in readerObj:
+            rowString = row[1]
+            if date not in rowString:
+                count += 1
+   
+    val =input("how many rows do NOT have the following date "+ studentLineArray[1]+" ?")
+    if int(val) == count:
+        print("True")
+    else:
+        print("try again")
+        level5()
+
+# 2059095                
+def level6():
+    print("asfd")
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    global studentLineCSV
+    studentLineArray = studentLineCSV.split(',')
+    print(studentLineArray[0])
+    if int(studentLineArray[0]) > 5:
+        randNum = int(studentLineArray[0]) // 2
+    else:
+        randNum = int(studentLineArray[0]) + 264
+    with open(datasetfname) as csvfile:
+        readerObj = csv.reader(csvfile)
+        rows = list(readerObj)
+        print(rows[randNum])
+
+
+
+    
+#    val = input("what are the coords for the accident at line number " + lineList[2] + "?")
+
+#    with open(datasetfname) as f:
+#        lstr = get_random_line(f)
+#        fields = lstr.split(",")
+#        val = input("what are the coordinates for the accident at line number {fields[0]}?")
+
+
+
+if __name__=="__main__":
+    level1()
