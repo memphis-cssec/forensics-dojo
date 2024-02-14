@@ -32,7 +32,6 @@ with open(datasetfname) as csvfile:
 #rline = random.choice(dataset)
 
 with open("./flag") as f:
-    print(f.read())
     global flag
     flag = str(f.read())
 
@@ -143,9 +142,9 @@ def level5():
         print("try again")
         level5()
 
-# 2059095                
+            
 def level6():
-    print("asfd")
+    
     datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     global studentLineCSV
     studentLineArray = studentLineCSV.split(',')
@@ -157,12 +156,62 @@ def level6():
     with open(datasetfname) as csvfile:
         readerObj = csv.reader(csvfile)
         rows = list(readerObj)
-        print(rows[randNum])
-
-
-
+        targetRow = rows[randNum]
     
-#    val = input("what are the coords for the accident at line number " + lineList[2] + "?")
+    print(targetRow[1])
+    val = input("which row has "+targetRow[1]+" as the date "+targetRow[2]+" as the time "+targetRow[3]+ " as the borough?")    
+    if val == targetRow[0]:
+        print("Correct")
+    else:
+        print("try again")
+        level6()
+    
+def level7():
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    global studentLineCSV
+    studentLineArray = studentLineCSV.split(',')
+    print(studentLineArray[2])
+    time = studentLineArray[2]
+    print(time[:3])
+    time = time[:3]
+    count = 0
+    with open (datasetfname) as csvfile:
+        readerObj = csv.reader(csvfile)
+        for row in readerObj:
+            if time in row[2]:
+                count += 1   
+            
+    val = input("how many rows are in the same hour as "+studentLineArray[2]+"?")
+    if val == count:
+        print("Correct")
+        level8()
+    else:
+        print("try again")
+        level7()
+
+def level8():
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    global studentLineCSV
+    studentLineArray = studentLineCSV.split(',')
+    print(studentLineArray)
+    date = studentLineArray[1]
+    print(date)    
+    print(date[2:6])
+    date = date[2:6]
+    count = 0
+    with open (datasetfname) as csvfile:
+        readerObj = csv.reader(csvfile)
+        for row in readerObj:
+            if date in row[1]:
+                count += 1
+                print(row[1])
+    val = input("How many accidents took place on the "+str(date[1:3])+" (st/th) ?")
+    if val == count:
+        print("correct")
+    else:
+        print("try again")
+        level8()
+
 
 #    with open(datasetfname) as f:
 #        lstr = get_random_line(f)
@@ -172,4 +221,4 @@ def level6():
 
 
 if __name__=="__main__":
-    level1()
+    level8()
