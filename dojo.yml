@@ -42,9 +42,3 @@ modules:
   - id: level-8
     name: level8
     description: How many accidents happened on a specific date?
-
-- id: file-systems
-  name: Controlling File Systems
-  description: |
-    Learn how to control a File System
-  challenges:  
