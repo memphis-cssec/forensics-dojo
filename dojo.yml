@@ -1,0 +1,50 @@
+id: digital-forensics
+name: An introduction to digital forensics
+
+award:
+  belt: white
+
+description: |
+  Magic has different disciplines. Evocation, Divination, Transmutation. However here we will deal with the art of Necromancy.
+  The ability to infer what has happened by examining spirits in the computer that are no more. Join us in this journey through
+  different layers of the computer, and discover what secrets, the past holds.
+
+type: topic
+
+modules:
+
+- id: NewYorksFinestGrepUser
+  name: Controlling a Single File
+  description: |
+    Learn how to control the chaos that can ensue in **one big file**. Become New York's Finest Grep User.
+  challenges:
+  - id: level-1
+    name: level1
+    description: Discover where an accident occured
+  - id: level-2
+    name: level2
+    description: Discover how many times someone appeared somewhere
+  - id: level-3
+    name: level3
+    description: Discover what happened on a date
+  - id: level-4
+    name: level4
+    description: Discover how many accidents happened on the same date and on the same place
+  - id: level-5
+    name: level5
+    description: Discover how many accidents did NOT happen at a date
+  - id: level-6
+    name: level6
+    description: Which accident happened at a specific date a place?
+  - id: level-7
+    name: level7
+    description: How many accidents happened at the same hour?
+  - id: level-8
+    name: level8
+    description: How many accidents happened on a specific date?
+
+- id: file-systems
+  name: Controlling File Systems
+  description: |
+    Learn how to control a File System
+  challenges:  
