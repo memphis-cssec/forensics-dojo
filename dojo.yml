@@ -13,7 +13,7 @@ type: topic
 
 modules:
 
-- id: NewYorksFinestGrepUser
+- id: file-control
   name: Controlling a Single File
   description: |
     Learn how to control the chaos that can ensue in **one big file**. Become New York's Finest Grep User.
