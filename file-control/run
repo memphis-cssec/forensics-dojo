@@ -6,7 +6,6 @@ import csv
 
 global studentLineCSV
 
-print("alala")
 config = (pathlib.Path(__file__).parent / ".config").read_text()
 level = int(config)
 
@@ -21,17 +20,22 @@ def get_random_line(afile):
 def readans(str):
     return str.strip()
 
-with open("./flag") as f:
+with open("/flag") as f:
+    global flag
     random.seed(f.read())
+    flag = str(f.read())
 
 datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+
 with open(datasetfname) as csvfile:
     global studentLineCSV
     studentLineCSV = str(get_random_line(csvfile))
 
-with open("./flag") as f:
-    global flag
-    flag = str(f.read())
+def wordCount(word):
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    with open(datasetfname) as csvfile:
+         csvfile = csvfile.read()     
+         return csvfile.count(word)
 
 
 def level1():
@@ -44,12 +48,6 @@ def level1():
         print("Correct: get your flag {flag}")
     else:
         print("try again")
-
-def wordCount(word):
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
-    with open(datasetfname) as csvfile:
-         csvfile = csvfile.read()     
-         return csvfile.count(word)
 
 def level2():
     global studentLineCSV
