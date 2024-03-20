@@ -21,8 +21,9 @@ def readans(str):
     return str.strip()
 
 with open("/flag") as f:
-    random.seed(f.read())
-    flag = str(f.read())
+    buf=f.read()
+    random.seed(buf)
+    flag = str(buf)
 
 datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
 
