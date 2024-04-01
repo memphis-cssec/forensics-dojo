@@ -104,6 +104,13 @@ def level4():
     else:
         print("try again")
 
+<<<<<<< HEAD
+=======
+# Level 5
+# Tests if students can figure
+# out how to find amount of items
+# not in a doc.
+>>>>>>> d77d658 (Update to levels code, bug fixes)
 def level5():
     print("level 5")
     global studentLineCSV
@@ -118,7 +125,11 @@ def level5():
             rowString = row[1]
             if date not in rowString:
                 count += 1
+<<<<<<< HEAD
    
+=======
+    print(count) 
+>>>>>>> d77d658 (Update to levels code, bug fixes)
     val =input("how many rows do NOT have the following date "+ studentLineArray[1]+" ?")
     if int(val) == count:
         print(f"Correct: get your flag {flag}")
