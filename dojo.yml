@@ -2,9 +2,6 @@ id: digital-forensics
 name: An introduction to digital forensics
 type: topic
 
-award:
-  belt: white
-
 description: |
   Magic has different disciplines. Evocation, Divination, Transmutation. However here we will deal with the art of Necromancy.
   The ability to infer what has happened by examining spirits in the computer that are no more. Join us in this journey through
