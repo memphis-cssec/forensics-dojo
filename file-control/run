@@ -43,7 +43,9 @@ def level1():
     global studentLineCSV
     print("level1")
     studentLineArray = studentLineCSV.split(',')
-    val = input("what borough did the accident on "+studentLineArray[1]+" at "+studentLineArray[2]+" take place?")
+    date = studentLineArray[1]
+    time = studentLineArray[2]
+    val = input(f"In which borough did the accident on {date} at {time} take place?").strip()
     if val == studentLineArray[3]:
         print(f"Correct: get your flag {flag}")
     else:
@@ -53,7 +55,8 @@ def level2():
     global studentLineCSV
     print("level2") 
     studentLineArray = studentLineCSV.split(',')
-    val = input("how many times does "+studentLineArray[3]+" appear in the doc?")
+    borough = studentLineArray[3]
+    val = input(f"how many times does the borough {borough} appear in the dataset?")
     if int(val) == int(wordCount(studentLineArray[3])):
         print(f"Correct: get your flag {flag}")
     else:
@@ -74,7 +77,7 @@ def level3():
             if date in rowString:
                 count += 1
 
-    val = input("how many rows share the same date as "+studentLineArray[1]+" ?")
+    val = input(f"how many rows share the exact same date as {date}?")
    
     if int(val) == count:
         print(f"Correct: get your flag {flag}")
@@ -115,7 +118,7 @@ def level5():
             rowString = row[1]
             if date not in rowString:
                 count += 1
-    val = input("how many rows do NOT have the following date "+ studentLineArray[1]+" ?")
+    val = input(f"how many rows do NOT have the following date: {date}?")
     if int(val) == count:
         print(f"Correct: get your flag {flag}")
     else:
@@ -134,7 +137,10 @@ def level6():
         rows = list(readerObj)
         targetRow = rows[randNum]
     
-    val = input("which row has "+targetRow[1]+" as the date "+targetRow[2]+" as the time "+targetRow[3]+ " as the borough?")    
+    date = targetRow[1]
+    time = targetRow[2]
+    borough = targetRow[3]
+    val = input(f"which row has {date} as the date {time} as the time and {borough} as the borough?").strip()
     if val == targetRow[0]:
         print(f"Correct: get your flag {flag}")
     else:
@@ -147,6 +153,7 @@ def level7():
     time = studentLineArray[2]
     time = time.split(":")[0]
     count = 0
+    hour = studentLineArray[2]
     with open (datasetfname) as csvfile:
         readerObj = csv.reader(csvfile)
         for row in readerObj:
@@ -154,7 +161,7 @@ def level7():
             if time == rowhour:
                 count += 1   
             
-    val = input("how many rows are in the same hour as "+studentLineArray[2]+"?")
+    val = input(f"how many rows are in the same hour as {hour}?.\nFor example if the hour was 14:39 it means how many accidents occured between 2pm and 3pm.")
     if int(val) == count:
         print(f"Correct: get your flag {flag}")
     else:
@@ -172,7 +179,8 @@ def level8():
         for row in readerObj:
             if date in row[1]:
                 count += 1
-    val = input("How many accidents took place on the "+str(date[1:3])+" (st/th) ?")
+    day = str(date[1:3])
+    val = input(f"How many accidents took place on the {day} (st/th) day of a month?")
     if int(val) == count:
         print(f"Correct: get your flag {flag}")
     else:
