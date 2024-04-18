@@ -87,17 +87,15 @@ def level4():
     studentLineArray = studentLineCSV.split(',')
     count = 0 
     date = studentLineArray[1]
-    date = date[-4:]
-    city = studentLineArray[3]
+    borough = studentLineArray[3]
     with open(datasetfname) as csvfile:
         readerObj = csv.reader(csvfile)
         for row in readerObj:
            rowString = row[1]
-           if date in rowString:
-               if city in row[3]:
-                   count += 1  
+           if date == row[1] and borough == row[3]:
+               count += 1  
     
-    val = input("how many rows have the same date and same city?")
+    val = input(f"how many rows share both the date {date} and the borough {borough} ?")
     if int(val) == count:
         print(f"Correct: get your flag {flag}")
     else:
