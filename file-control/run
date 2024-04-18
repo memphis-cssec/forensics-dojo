@@ -1,4 +1,5 @@
 #!/opt/pwn.college/python
+#!/usr/bin/env python3
 import pathlib
 import random
 import csv
@@ -108,7 +109,6 @@ def level5():
     studentLineArray = studentLineCSV.split(',')
     count = 0 
     date = studentLineArray[1]
-    date = date[-4:]
     with open(datasetfname) as csvfile:
         readerObj = csv.reader(csvfile)
         for row in readerObj:
