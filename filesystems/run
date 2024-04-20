@@ -40,10 +40,9 @@ def check(res):
         print("\nTry again")
 
 def hashinputagainst(hash):
-    userinp = sys.stdin.buffer.read(16*1024*1024) # 16mb max
+    userinp = sys.stdin.buffer.read(32*1024*1024) # 32mb max
     maybe = hashlib.md5(userinp).hexdigest()
     check(maybe==hash)
-
 
 def level1(): 
     rsize = random.randint(1,10)
