@@ -32,6 +32,18 @@ with open(datasetfname) as csvfile:
     global studentLineCSV
     studentLineCSV = str(get_random_line(csvfile))
 
+def wordFieldCount(word, field):
+    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+    sum = 0
+    with open(datasetfname) as csvfile:
+         reader = csv.reader(csvfile, delimiter=",")
+         for row in reader:
+             tword = row[field]
+             if tword == word:
+                 sum += 1
+    return sum
+    
+
 def wordCount(word):
     datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     with open(datasetfname) as csvfile:
@@ -57,7 +69,7 @@ def level2():
     studentLineArray = studentLineCSV.split(',')
     borough = studentLineArray[3]
     val = input(f"how many times does the borough {borough} appear in the dataset?")
-    if int(val) == int(wordCount(studentLineArray[3])):
+    if int(val) == int(wordFieldCount(studentLineArray[3], 3)):
         print(f"Correct: get your flag {flag}")
     else:
         print("try again")
