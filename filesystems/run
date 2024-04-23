@@ -79,8 +79,9 @@ def level5():
     hashinputagainst(fat1sum)
 
 def level6():
-    namesum = "8b114b3595fb581f78cdd48afaf3f7b9"
-    maybe = input("what is the name of the student who has disappeared? (all lowercase)").strip()
+    namesum = "8742c6ea7fa9171f6e0598e3a41ff537"
+    userinp = input("what is the name of the student who has disappeared? (all lowercase)").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==namesum)
 
 def level7():
@@ -102,9 +103,10 @@ def level9():
     hashinputagainst(keysum)
 
 def level10():
-    flagsum = "de8453a0335042ce4301ed3d9759bfa9"
+    flagsum = "11b415f48aff2a54fb125300f86bc884"
     print("the final flag. should be of the form \memphisforensics{...}.can you discover it?")
-    maybe = input("flag>").strip()
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==flagsum)
 
 def challenge():
