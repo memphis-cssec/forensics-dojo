@@ -56,9 +56,10 @@ def level1():
     hashinputagainst(correct)
 
 def level2():
-    ravensum = "8cca7b05f369ad88b406cf6f9beb80a7"
-    maybe = input("what is the md5sum of the raven.dd file?").strip()
-    check(maybe==ravensum)
+    ravensumsum = "e04a16040e4332cf12dfcf3c412b7b16"
+    userinp = input("what is the md5sum of the raven.dd file?").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==ravensumsum)
 
 def level3():
     mbrsum = "ad3cbb5d5a68aa03cb4a989361be967a"
