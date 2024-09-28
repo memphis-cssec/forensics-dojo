@@ -153,7 +153,7 @@ def level6():
     time = targetRow[2]
     borough = targetRow[3]
     val = input(f"which row has {date} as the date {time} as the time and {borough} as the borough?").strip()
-    if val == targetRow[0]:
+    if val == targetRow[0].strip():
         print(f"Correct: get your flag {flag}")
     else:
         print("try again")
