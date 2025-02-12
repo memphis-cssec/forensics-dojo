@@ -26,14 +26,13 @@ with open("/flag") as f:
     random.seed(buf)
     flag = str(buf)
 
-datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
+datasetfname = "/data/dataset.csv"
 
 with open(datasetfname) as csvfile:
     global studentLineCSV
     studentLineCSV = str(get_random_line(csvfile))
 
 def wordFieldCount(word, field):
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     sum = 0
     with open(datasetfname) as csvfile:
          reader = csv.reader(csvfile, delimiter=",")
@@ -45,7 +44,6 @@ def wordFieldCount(word, field):
     
 
 def wordCount(word):
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     with open(datasetfname) as csvfile:
          csvfile = csvfile.read()     
          return csvfile.count(word)
@@ -78,7 +76,6 @@ def level2():
 def level3():
     print("level3")
     global studentLineCSV
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     studentLineArray = studentLineCSV.split(',')
     count = 0 
     date = studentLineArray[1]
@@ -99,7 +96,6 @@ def level3():
 def level4():
     print("level4")
     global studentLineCSV
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     studentLineArray = studentLineCSV.split(',')
     count = 0 
     date = studentLineArray[1]
@@ -120,7 +116,6 @@ def level4():
 def level5():
     print("level 5")
     global studentLineCSV
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     studentLineArray = studentLineCSV.split(',')
     count = 0 
     date = studentLineArray[1]
@@ -137,7 +132,6 @@ def level5():
         print("try again")
             
 def level6():
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     global studentLineCSV
     studentLineArray = studentLineCSV.split(',')
     if int(studentLineArray[0]) > 5:
@@ -159,7 +153,6 @@ def level6():
         print("try again")
     
 def level7():
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     global studentLineCSV
     studentLineArray = studentLineCSV.split(',')
     time = studentLineArray[2]
@@ -180,7 +173,6 @@ def level7():
         print("try again")
 
 def level8():
-    datasetfname = (pathlib.Path(__file__).parent / "dataset.csv")
     global studentLineCSV
     studentLineArray = studentLineCSV.split(',')
     date = studentLineArray[1]
@@ -210,7 +202,7 @@ def challenge():
        7: level7,
        8: level8,
     }
-    print("In these challenges you should examine the dataset located under /challenge/dataset.csv using standard unix tools")
+    print("In these challenges you should examine the dataset located under /data/dataset.csv using standard unix tools")
     print("like grep, wc, awk etc. Good luck!")
     f = lvls[level]
     f()
