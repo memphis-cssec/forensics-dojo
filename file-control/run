@@ -55,7 +55,8 @@ def level1():
     studentLineArray = studentLineCSV.split(',')
     date = studentLineArray[1]
     time = studentLineArray[2]
-    val = input(f"In which borough did the accident on {date} at {time} take place?").strip()
+    street = studentLineArray[9].strip().lower()
+    val = input(f"In which borough did the accident on {date} at {time} on a street naned '{street}' take place?").strip()
     if val == studentLineArray[3]:
         print(f"Correct: get your flag {flag}")
     else:
