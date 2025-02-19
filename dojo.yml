@@ -42,8 +42,8 @@ modules:
     name: level8
     description: How many accidents happened on a specific date?
 
-- id: filesystems
-  name: Filesystems
+- id: ctf
+  name: A small CTF
   description: Dig deep into the secrets of file systems, and maybe save some poor souls from eternal damnation.
     A Miscatonic university computer science student disappeared 4 months ago leaving no trace, but this USB key.
     Can you shed some light on what happened?
