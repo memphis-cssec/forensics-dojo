@@ -147,7 +147,9 @@ def level6():
     date = targetRow[1]
     time = targetRow[2]
     borough = targetRow[3]
-    val = input(f"which row has {date} as the date {time} as the time and {borough} as the borough?").strip()
+    street = studentLineArray[9].strip().lower()
+    val = input(f"which row has {date} as the date {time} as the time , {borough} as the borough and {street} as the
+                street?").strip()
     if val == targetRow[0].strip():
         print(f"Correct: get your flag {flag}")
     else:
