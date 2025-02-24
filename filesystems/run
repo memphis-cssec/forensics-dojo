@@ -1,0 +1,141 @@
+#!/opt/pwn.college/python
+#!/usr/bin/env python3
+
+import pathlib
+import random
+import hashlib
+import tempfile
+import subprocess
+import sys
+
+global flag
+
+welcomemsg = """ WELCOME! 
+We'll fool around with filesystems! ;)
+You will have to create, parse, recover and reason deeply for various
+properties of filesystems. Tools you may want to use for this module are : 
+dd, fdisk, sleuthkit, extundelete, scalpel, autopsy and more. 
+Good luck!
+"""
+
+config = (pathlib.Path(__file__).parent / ".config").read_text()
+level = int(config)
+fname = "image.dd"
+
+with open("/flag") as f:
+    buf=f.read()
+    random.seed(buf)
+    flag = str(buf)
+
+
+def md5_file(file_name):
+    with open(file_name, "rb") as f:
+        file_contents = f.read()
+        md5_hash = hashlib.md5(file_contents).hexdigest()
+        return md5_hash
+
+def check(res):
+    if res == True:
+        print(f"\nCongrats! Here is your flag:{flag}")
+    else:
+        print("\nTry again")
+
+def hashinputagainst(hash):
+    userinp = sys.stdin.buffer.read(32*1024*1024) # 32mb max
+    maybe = hashlib.md5(userinp).hexdigest()
+    check(maybe==hash)
+
+def level1(): 
+    rsize = random.randint(1,10)
+    print(f"using dd, please create a file of size {rsize} MB containing zeros")
+    print("when you are ready, pass it to my stdin")
+    tf = tempfile.NamedTemporaryFile()
+    subprocess.run(["dd", "if=/dev/zero", f"of={tf.name}", "bs=1M", f"count={rsize}"], stdout = subprocess.DEVNULL, stderr = subprocess.DEVNULL)
+    tf.flush()
+    correct = md5_file(tf.name)
+    tf.close()
+    hashinputagainst(correct)
+
+def level2():
+    fsumsum = "162938dea889a664ac3ac6ed4663dd03"
+    userinp = input(f"what is the md5sum of the {fname} file?").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==fsumsum)
+
+def level3():
+    mbrsum = "27583368847388214e5e7d3e7d3bee11"
+    print(f"using dd, please carve out the master boot record of the {fname} file")
+    print("when you are ready, pass it to my stdin")
+    hashinputagainst(mbrsum)
+
+def level4():
+    ext3sum = "614fc25b6fdef2ffba2768b6d3eef134"
+    print("using dd, please carve out the first partition of the {fname} file")
+    print("when you are ready, pass it to my stdin")
+    hashinputagainst(ext3sum)
+
+def level5():
+    fatsum = "7e14b50965bd62488a51d868a5ee96f2"
+    print("using dd, please carve out the second partition of the {fname} file")
+    print("when you are ready, pass it to my stdin")
+    hashinputagainst(fatsum)
+
+def level6():
+    namesum = "0055fe4f1e5b8d41ac68b224696a3f0c"
+    print(f"regarding the files at the first partition of {fname}")
+    userinp = input("which file contains the word Supercalifragilisticexpialidocious? give me the filename").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==namesum)
+
+def level7():
+    namesum = "d97eb6231825d241f51d05c5a545857a"
+    print(f"regarding the files at the first partition of {fname}")
+    userinp = input("concatenate the filenames of the oldest modified image with the newest modified image.").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==namesum)
+
+def level8():
+    namesum = "99c31ca02b3d804dc4b2aad48ad9652b"
+    print(f"regarding the files at the first partition of {fname}")
+    userinp = input("concatenate the filenames of the newest created image with the oldest created image.").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==namesum)
+
+def level9():
+    jokesum = "73d1f68ce010d351dd5e2a0486c75b31"
+    print(f"regarding the files at the first partition of {fname}")
+    userinp = input("there is a deleted PNG joke. find it. send that file to my stdin").strip()
+    hashinputagainst(jokesum)
+
+def level10():
+    pdfsum = "60f7adea7df4c59ac64f7409a6af8e41"
+    print(f"regarding the files at the second partition of {fname}")
+    userinp = input("there is a deleted PDF file. find it. send that file to my stdin").strip()
+    hashinputagainst(pdfsum)
+
+def level11():
+    msgsum = "f57f60d04891e1ef07a0aaa0c609eaae"
+    print("there is a hidden message, where no tool will look there for you. What is it?")
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
+
+def challenge():
+    lvls = {
+       1: level1,
+       2: level2,
+       3: level3,
+       4: level4,
+       5: level5,
+       6: level6,
+       7: level7,
+       8: level8,
+       9: level9,
+       10: level10,
+       11: level11,
+    }
+    print(welcomemsg)
+    f = lvls[level]
+    f()
+
+challenge()

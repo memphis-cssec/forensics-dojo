@@ -42,11 +42,11 @@ modules:
     name: level8
     description: How many accidents happened on a specific date?
 
-- id: ctf
-  name: A small CTF
-  description: Dig deep into the secrets of file systems, and maybe save some poor souls from eternal damnation.
-    A Miscatonic university computer science student disappeared 4 months ago leaving no trace, but this USB key.
-    Can you shed some light on what happened?
+- id: filesystems
+  name: Filesystem forensics
+  description: Dive deep into the secrets of filesystems!
+    Use commands like dd to carve out partitions, undelete files using tools like foremost, scalpel, and extundelete, and discover
+    the secret messages the disk holds.
   challenges:
   - id: level-1
     name: level1
@@ -62,19 +62,22 @@ modules:
     description: Carving out partitions
   - id: level-5
     name: level5
-    description: FAT carving
+    description: Carving out more paritions
   - id: level-6
     name: level6
-    description: Looking for names
+    description: Looking for the words
   - id: level-7
     name: level7
-    description: Looking for data
+    description: Oh Times
   - id: level-8
     name: level8
-    description: Looking for victims
+    description: Oh Times one more Time
   - id: level-9
     name: level9
-    description: Looking for keys
+    description: File necromancy
   - id: level-10
     name: level10
-    description: Cracking the code
+    description: Fat file necromancy
+  - id: level-11
+    name: level11
+    description: Where noone has gone before
