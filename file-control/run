@@ -1,4 +1,4 @@
-#!/opt/pwn.college/python
+#!/usr/bin/env python-dojo-suid
 #!/usr/bin/env python3
 import pathlib
 import random
