@@ -81,3 +81,8 @@ modules:
   - id: level-11
     name: level11
     description: Where noone has gone before
+
+files:
+  - type: download
+    url: "https://github.com/memphis-cssec/forensics-dojo/raw/refs/heads/main/filesystems/image.dd"
+    path: "/challenge/files/image.dd"
