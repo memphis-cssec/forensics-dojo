@@ -80,21 +80,21 @@ def level5():
     hashinputagainst(fatsum)
 
 def level6():
-    namesum = "0055fe4f1e5b8d41ac68b224696a3f0c"
+    namesum = "f3c6acb35634126dc7d6a524dac0f229"
     print(f"regarding the files at the first partition of {fname}")
     userinp = input("which file contains the word Supercalifragilisticexpialidocious? give me the filename").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==namesum)
 
 def level7():
-    namesum = "d97eb6231825d241f51d05c5a545857a"
+    namesum = "ecc9f5c40b51b29bc4fc2032b85824b7"
     print(f"regarding the files at the first partition of {fname}")
     userinp = input("concatenate the filenames of the oldest modified image with the newest modified image.").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==namesum)
 
 def level8():
-    namesum = "99c31ca02b3d804dc4b2aad48ad9652b"
+    namesum = "5ab6199a53975f4d773eb69454c451dc"
     print(f"regarding the files at the first partition of {fname}")
     userinp = input("concatenate the filenames of the newest created image with the oldest created image.").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
