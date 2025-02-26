@@ -69,7 +69,7 @@ def level3():
 
 def level4():
     ext3sum = "614fc25b6fdef2ffba2768b6d3eef134"
-    print("using dd, please carve out the first partition of the {fname} file")
+    print(f"using dd, please carve out the first partition of the {fname} file")
     print("when you are ready, pass it to my stdin")
     hashinputagainst(ext3sum)
 
