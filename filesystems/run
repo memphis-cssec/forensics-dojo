@@ -19,7 +19,7 @@ Good luck!
 
 config = (pathlib.Path(__file__).parent / ".config").read_text()
 level = int(config)
-fname = "image.dd"
+fname = "/data/image.dd"
 
 with open("/flag") as f:
     buf=f.read()
