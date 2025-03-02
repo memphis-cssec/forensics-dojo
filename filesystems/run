@@ -109,7 +109,7 @@ def level9():
 def level10():
     pdfsum = "60f7adea7df4c59ac64f7409a6af8e41"
     print(f"regarding the files at the second partition of {fname}")
-    input("there is a deleted PDF file. find it. send that file to my stdin")
+    print("there is a deleted PDF file. find it. send that file to my stdin")
     hashinputagainst(pdfsum)
 
 def level11():
