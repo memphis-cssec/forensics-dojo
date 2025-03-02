@@ -103,13 +103,13 @@ def level8():
 def level9():
     jokesum = "73d1f68ce010d351dd5e2a0486c75b31"
     print(f"regarding the files at the first partition of {fname}")
-    userinp = input("there is a deleted PNG joke. find it. send that file to my stdin").strip()
+    print("there is a deleted PNG joke. find it. send that file to my stdin")
     hashinputagainst(jokesum)
 
 def level10():
     pdfsum = "60f7adea7df4c59ac64f7409a6af8e41"
     print(f"regarding the files at the second partition of {fname}")
-    userinp = input("there is a deleted PDF file. find it. send that file to my stdin").strip()
+    input("there is a deleted PDF file. find it. send that file to my stdin")
     hashinputagainst(pdfsum)
 
 def level11():
