@@ -81,3 +81,34 @@ modules:
   - id: level-11
     name: level11
     description: Where noone has gone before
+
+- id: memory 
+  name: Memory forensics
+  description: Yesterday is but today's memory!
+    Using tools like gdb, strace, volatility or just even plain strings, you can peek into the running behavior of programs, no matter if they are alive or long gone! 
+    Use your skills to understand what strange binaries are doing, and to analyze some real world windows malware!
+  challenges:
+  - id: level-1
+    name: level1
+    description: It's right there. Flag should have a format of \forensics(...)
+  - id: level-2
+    name: level2
+    description: It gets built for you!. Flag should have a format of \forensics(...)
+  - id: level-3
+    name: level3
+    description: The program is listening for your needs! Flag should have a format of \forensics(...)
+  - id: level-4
+    name: level4
+    description: The program is shouting in the dark! Flag should have a format of \forensics(...)
+  - id: level-5
+    name: level5
+    description: Using volatility analyse the properties of a memory image
+  - id: level-6
+    name: level6
+    description: Using volatility discover the processes that were running
+  - id: level-7
+    name: level7
+    description: Using volatility find what goes on in the service host process.
+  - id: level-8
+    name: level8
+    description: Using volatility dump the memory of an infected process and discover how it listens for connections.

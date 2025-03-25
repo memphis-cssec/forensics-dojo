@@ -1,0 +1,126 @@
+#!/usr/bin/env python-dojo-suid
+
+import pathlib
+import random
+import hashlib
+import tempfile
+import subprocess
+import sys
+
+global flag
+
+welcomemsg = """ WELCOME! 
+Let's look into the memory of programs (running or not)!
+
+For the first part of dynamic analysis of programs, you can use
+tools like gdb, ps, strace, netstat etc or attempt a static analysis
+with ghidra.
+
+For the second part when running volatility, make sure to invoke it as
+
+vol -s /opt/volatility3/symbols/ -f [filename] [module]
+And give it time to cache data. Setting the cache directory to something in
+your home, can make, life between levels, better.
+
+Good luck!
+"""
+
+config = (pathlib.Path(__file__).parent / ".config").read_text()
+level = int(config)
+binfname = "/data/strange-binary"
+memfname = "/data/malware.vmem"
+
+with open("/flag") as f:
+    buf=f.read()
+    random.seed(buf)
+    flag = str(buf)
+
+def md5_file(file_name):
+    with open(file_name, "rb") as f:
+        file_contents = f.read()
+        md5_hash = hashlib.md5(file_contents).hexdigest()
+        return md5_hash
+
+def check(res):
+    if res == True:
+        print(f"\nCongrats! Here is your flag:{flag}")
+    else:
+        print("\nTry again")
+
+def hashinputagainst(hash):
+    userinp = sys.stdin.buffer.read(32*1024*1024) # 32mb max
+    maybe = hashlib.md5(userinp).hexdigest()
+    check(maybe==hash)
+
+def level1(): 
+    lvl1sum = "1169bd80cf73ba0f452658fac395ed39"
+    print(f"in the {binfname} program a flag sits like a sitting duck! go get it!")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl1sum)
+
+def level2():
+    lvl2sum = "e116eba3a8ce5d487964a1088c50fa8c"
+    print(f"in the {binfname} program a flag is getting dynamically created before it sits like the afformentioned duck.")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl2sum)
+
+def level3():
+    lvl3sum = "b5599303b18555c5f7fceb4606213ace"
+    print(f"is the {binfname} program offering to give you the flag via some other means? go get it!")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl3sum)
+
+def level4():
+    lvl4sum = "7179bf3f29275682a9780d90c4e7cd88"
+    print(f"monitor the {binfname} program while it's running. maybe it shouts in the darkest darkness")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl4sum)
+
+def level5():
+    lvl5sum = "ec47c78e9b59ceff30691396918797a7"
+    print(f"Using volatility3, for the windows image provided in {memfname} find the system time of that machine at the time of acquisition.")
+    userinp = input("time>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl5sum)
+
+def level6():
+    lvl6sum = "45e0edaca8702e6e90d1d98cf3647d5f"
+    print(f"Using volatility3, for the windows image provided in {memfname} find the name of the process with PID 544")
+    userinp = input("PID>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl6sum)
+
+def level7():
+    lvl7sum = "d1aa1401155b88656bbdc86fcb6f3223"
+    print(f"Using volatility3, for the windows image provided in {memfname} find the offset of event 97 in svchost.  notice the binary it is running. ")
+    userinp = input("offset>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl7sum)
+
+def level8():
+    lvl8sum = "e2c61965b5e23b47b77d7c51611b6d7f"
+    print(f"Using volatility3, for the windows image provided in {memfname} and the memmap plugin, dump the memory of process with pid 544. Using strings, and searching for http, find the port the malware is listening of for connections. what is it?")
+    userinp = input("port>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl8sum)
+
+def challenge():
+    lvls = {
+       1: level1,
+       2: level2,
+       3: level3,
+       4: level4,
+       5: level5,
+       6: level6,
+       7: level7,
+       8: level8,
+    }
+    print(welcomemsg)
+    f = lvls[level]
+    f()
+
+challenge()
