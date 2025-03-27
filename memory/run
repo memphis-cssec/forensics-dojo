@@ -81,7 +81,7 @@ def level4():
     check(maybe==lvl4sum)
 
 def level5():
-    lvl5sum = "ec47c78e9b59ceff30691396918797a7"
+    lvl5sum = "5fda3e205f22b04a6ba2b6eade02fd13"
     print(f"Using volatility3, for the windows image provided in {memfname} find the system time of that machine at the time of acquisition.")
     userinp = input("time>").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
