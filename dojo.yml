@@ -124,15 +124,15 @@ modules:
   - id: level-2
     name: level2
     description: Find the host and port combination of the scientist portal
-   - id: level-3
+  - id: level-3
     name: level3
     description: Export a packet 
-   - id: level-4
+  - id: level-4
     name: level4
     description: Discover credentials
-   - id: level-5
+  - id: level-5
     name: level5
     description: Export a file that was transferred
-   - id: level-6
+  - id: level-6
     name: level6
     description: Use what you have to access an external service. 
