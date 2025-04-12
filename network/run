@@ -80,8 +80,8 @@ def level4():
 def level5():
     lvl5sum = "272495f692754c96aca9b5899d0a8d2a"
     print(f"in the pcap {pcap}, you can see that from that flow, she downloaded a .zip file. Export it and pass it to our stdin")
-    userinp = input(".zip file>").strip()
-    check(hashinputagainst(lvl5sum))
+    print(".zip file>")
+    hashinputagainst(lvl5sum)
 
 def level6():
     lvl6sum = "375c439e01952bb469b3ec6b13a32dbc"
