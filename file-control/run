@@ -26,7 +26,7 @@ with open("/flag") as f:
     random.seed(buf)
     flag = str(buf)
 
-datasetfname = "/data/dataset.csv"
+datasetfname = "/data/new-york-accidents.csv"
 
 with open(datasetfname) as csvfile:
     global studentLineCSV
@@ -204,7 +204,7 @@ def challenge():
        7: level7,
        8: level8,
     }
-    print("In these challenges you should examine the dataset located under /data/dataset.csv using standard unix tools")
+    print(f"In these challenges you should examine the dataset located under {datasetfname} using standard unix tools")
     print("like grep, wc, awk etc. Good luck!")
     f = lvls[level]
     f()
