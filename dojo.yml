@@ -1,7 +1,9 @@
 id: digital-forensics
 name: An introduction to digital forensics
 type: topic
-image: ramrunner/pwncollege-forensics
+#image: ramrunner/pwncollege-forensics
+image: pwncollege/challenge-legacy
+
 
 description: |
   Magic has different disciplines. Evocation, Divination, Transmutation. However here we will deal with the art of Necromancy.
