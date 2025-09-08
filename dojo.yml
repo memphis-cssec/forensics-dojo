@@ -1,8 +1,7 @@
 id: digital-forensics
 name: An introduction to digital forensics
 type: topic
-#image: ramrunner/pwncollege-forensics
-image: pwncollege/challenge-legacy
+image: ramrunner/pwncollege-forensics
 
 
 description: |
