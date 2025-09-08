@@ -42,97 +42,97 @@ modules:
     name: level8
     description: How many accidents happened on a specific date?
 
-- id: filesystems
-  name: Filesystem forensics
-  description: Dive deep into the secrets of filesystems!
-    Use commands like dd to carve out partitions, undelete files using tools like foremost, scalpel, and extundelete, and discover
-    the secret messages the disk holds.
-  challenges:
-  - id: level-1
-    name: level1
-    description: Basic dd ing
-  - id: level-2
-    name: level2
-    description: Basic hashing
-  - id: level-3
-    name: level3
-    description: Carving out MBRs
-  - id: level-4
-    name: level4
-    description: Carving out partitions
-  - id: level-5
-    name: level5
-    description: Carving out more paritions
-  - id: level-6
-    name: level6
-    description: Looking for the words
-  - id: level-7
-    name: level7
-    description: Oh Times
-  - id: level-8
-    name: level8
-    description: Oh Times one more Time
-  - id: level-9
-    name: level9
-    description: File necromancy
-  - id: level-10
-    name: level10
-    description: Fat file necromancy
-  - id: level-11
-    name: level11
-    description: Where noone has gone before
-
-- id: memory 
-  name: Memory forensics
-  description: Yesterday is but today's memory!
-    Using tools like gdb, strace, volatility or just even plain strings, you can peek into the running behavior of programs, no matter if they are alive or long gone! 
-    Use your skills to understand what strange binaries are doing, and to analyze some real world windows malware!
-  challenges:
-  - id: level-1
-    name: level1
-    description: It's right there. Flag should have a format of \forensics(...)
-  - id: level-2
-    name: level2
-    description: It gets built for you!. Flag should have a format of \forensics(...)
-  - id: level-3
-    name: level3
-    description: The program is listening for your needs! Flag should have a format of \forensics(...)
-  - id: level-4
-    name: level4
-    description: The program is shouting in the dark! Flag should have a format of \forensics(...)
-  - id: level-5
-    name: level5
-    description: Using volatility analyse the properties of a memory image
-  - id: level-6
-    name: level6
-    description: Using volatility discover the processes that were running
-  - id: level-7
-    name: level7
-    description: Using volatility find what goes on in the service host process.
-  - id: level-8
-    name: level8
-    description: Using volatility dump the memory of an infected process and discover how it listens for connections.
-
-- id: network
-  name: Network forensics
-  description: In this module we trace the path of packets, that once flowed on networks past.
-    You can probably solve the whole module just using wireshark! 
-  challenges:
-  - id: level-1
-    name: level1
-    description: Find some string in a packet capture
-  - id: level-2
-    name: level2
-    description: Find the host and port combination of the scientist portal
-  - id: level-3
-    name: level3
-    description: Export a packet 
-  - id: level-4
-    name: level4
-    description: Discover credentials
-  - id: level-5
-    name: level5
-    description: Export a file that was transferred
-  - id: level-6
-    name: level6
-    description: Use what you have to access an external service. 
+#- id: filesystems
+#  name: Filesystem forensics
+#  description: Dive deep into the secrets of filesystems!
+#    Use commands like dd to carve out partitions, undelete files using tools like foremost, scalpel, and extundelete, and discover
+#    the secret messages the disk holds.
+#  challenges:
+#  - id: level-1
+#    name: level1
+#    description: Basic dd ing
+#  - id: level-2
+#    name: level2
+#    description: Basic hashing
+#  - id: level-3
+#    name: level3
+#    description: Carving out MBRs
+#  - id: level-4
+#    name: level4
+#    description: Carving out partitions
+#  - id: level-5
+#    name: level5
+#    description: Carving out more paritions
+#  - id: level-6
+#    name: level6
+#    description: Looking for the words
+#  - id: level-7
+#    name: level7
+#    description: Oh Times
+#  - id: level-8
+#    name: level8
+#    description: Oh Times one more Time
+#  - id: level-9
+#    name: level9
+#    description: File necromancy
+#  - id: level-10
+#    name: level10
+#    description: Fat file necromancy
+#  - id: level-11
+#    name: level11
+#    description: Where noone has gone before
+#
+#- id: memory 
+#  name: Memory forensics
+#  description: Yesterday is but today's memory!
+#    Using tools like gdb, strace, volatility or just even plain strings, you can peek into the running behavior of programs, no matter if they are alive or long gone! 
+#    Use your skills to understand what strange binaries are doing, and to analyze some real world windows malware!
+#  challenges:
+#  - id: level-1
+#    name: level1
+#    description: It's right there. Flag should have a format of \forensics(...)
+#  - id: level-2
+#    name: level2
+#    description: It gets built for you!. Flag should have a format of \forensics(...)
+#  - id: level-3
+#    name: level3
+#    description: The program is listening for your needs! Flag should have a format of \forensics(...)
+#  - id: level-4
+#    name: level4
+#    description: The program is shouting in the dark! Flag should have a format of \forensics(...)
+#  - id: level-5
+#    name: level5
+#    description: Using volatility analyse the properties of a memory image
+#  - id: level-6
+#    name: level6
+#    description: Using volatility discover the processes that were running
+#  - id: level-7
+#    name: level7
+#    description: Using volatility find what goes on in the service host process.
+#  - id: level-8
+#    name: level8
+#    description: Using volatility dump the memory of an infected process and discover how it listens for connections.
+#
+#- id: network
+#  name: Network forensics
+#  description: In this module we trace the path of packets, that once flowed on networks past.
+#    You can probably solve the whole module just using wireshark! 
+#  challenges:
+#  - id: level-1
+#    name: level1
+#    description: Find some string in a packet capture
+#  - id: level-2
+#    name: level2
+#    description: Find the host and port combination of the scientist portal
+#  - id: level-3
+#    name: level3
+#    description: Export a packet 
+#  - id: level-4
+#    name: level4
+#    description: Discover credentials
+#  - id: level-5
+#    name: level5
+#    description: Export a file that was transferred
+#  - id: level-6
+#    name: level6
+#    description: Use what you have to access an external service. 
