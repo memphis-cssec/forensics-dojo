@@ -16,7 +16,6 @@ modules:
 - id: file-control
   name: Controlling a Single File
   description: Learn how to control the chaos that can ensue in **one big file**. Become New York's Finest Grep User.
-
   challenges:
   - id: level-1
     name: level1
@@ -42,7 +41,22 @@ modules:
   - id: level-8
     name: level8
     description: How many accidents happened on a specific date?
-
+  resources:
+  - name: "Intro to Unix 1"
+    type: lecture
+    video: cMBYVpa7K5E
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: 2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
+  - name: "Intro to Unix 2"
+    type: lecture
+    video: pjKg2H0s1jM
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: 2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
+  - name: "Intro to Unix 3"
+    type: lecture
+    video: CF1md5s0adc
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: 2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
 #- id: filesystems
 #  name: Filesystem forensics
 #  description: Dive deep into the secrets of filesystems!
