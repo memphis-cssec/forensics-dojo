@@ -46,17 +46,17 @@ modules:
     type: lecture
     video: cMBYVpa7K5E
     playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
-    slides: 2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
+    slides: e/2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
   - name: "Intro to Unix 2"
     type: lecture
     video: pjKg2H0s1jM
     playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
-    slides: 2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
+    slides: e/2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
   - name: "Intro to Unix 3"
     type: lecture
     video: CF1md5s0adc
     playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
-    slides: 2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
+    slides: e/2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
 #- id: filesystems
 #  name: Filesystem forensics
 #  description: Dive deep into the secrets of filesystems!
