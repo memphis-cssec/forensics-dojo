@@ -1,0 +1,81 @@
+#!/opt/pwn.college/python
+
+import pathlib
+import random
+import tempfile
+import shutil
+
+global flag
+
+config = (pathlib.Path(__file__).parent / ".config").read_text()
+level = int(config)
+
+welcometxt = """
+In this spicy dojo, we take it a bit to the next level. no hints given.
+have fun! ;)
+"""
+
+dronedataset="/data/drone.zip"
+dronename="Drone to Conclusions"
+
+def check(res):
+    if res == True:
+        print(f"\nCongrats! Here is your flag:{flag}")
+    else:
+        print("\nTry again")
+
+def readans(str):
+    return str.strip()
+
+with open("/flag") as f:
+    buf=f.read()
+    random.seed(buf)
+    flag = str(buf)
+
+def level1():
+    lvl = f"""
+    {dronename} level 1
+    use {dronedataset}
+    give us the starting, ending, and max height (in m. separated by commas.no spaces)
+    """
+    print(lvl)
+    msgsum = "a1070c3be077df4cecdd87eea32c12fc"
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
+
+def level2():
+    lvl = f"""
+    {dronename} level 2
+    use {dronedataset}
+    give us the md5sum of the frame image file at the highest point
+    """
+    print(lvl)
+    msgsum = "0c2436cec16747412f813369770e177b"
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
+
+def level3():
+    lvl = f"""
+    {dronename} level 3
+    use {dronedataset}
+    can you spot a callsign?
+    """
+    print(lvl)
+    msgsum = "e1d5c9fe38811e04211e9589b2257c8b"
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
+
+def challenge():
+    lvls = {
+       1: level1,
+       2: level2,
+       3: level3,
+    }
+    print(welcometxt)
+    f = lvls[level]
+    f()
+
+challenge()

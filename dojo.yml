@@ -57,6 +57,20 @@ modules:
     video: CF1md5s0adc
     playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
     slides: e/2PACX-1vRD1Xxqvmhjf_UY1mSuaGaoZzW1LwNV2e_KEGRJKxuHdr7b3uVQWN6FyTApzXb9vMVwfuwVszACST1F
+- id: spicy
+  name: habanero forensics with a twist
+  description: In this module, things get slightly more real. Enjoy ;)
+  challenges:
+  - id: level-1
+    name: Drone to conclusions-1
+    description: First you need to open the door
+  - id: level-2
+    name: Drone to conclusions-2
+    description: Then you need to sort the mess
+  - id: level-3
+    name: Drone to conclusions-3
+    description: Now do you get it?
+
 #- id: filesystems
 #  name: Filesystem forensics
 #  description: Dive deep into the secrets of filesystems!
