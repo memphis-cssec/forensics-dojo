@@ -35,7 +35,7 @@ def level1():
     lvl = f"""
     {dronename} level 1
     use {dronedataset}
-    give us the starting, ending, and max height (in m. separated by commas.no spaces)
+    give us the starting, max, and ending height (in m. separated by commas.no spaces)
     """
     print(lvl)
     msgsum = "a1070c3be077df4cecdd87eea32c12fc"
