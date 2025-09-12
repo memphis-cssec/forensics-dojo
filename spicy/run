@@ -38,7 +38,7 @@ def level1():
     give us the starting, max, and ending height (in m. separated by commas.no spaces)
     """
     print(lvl)
-    msgsum = "3a894815e7b4d3022e755ff097b21712"
+    msgsum = "a1070c3be077df4cecdd87eea32c12fc"
     userinp = input(">").strip().strip('\n')
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==msgsum)
