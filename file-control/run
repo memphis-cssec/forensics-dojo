@@ -135,14 +135,10 @@ def level5():
 def level6():
     global studentLineCSV
     studentLineArray = studentLineCSV.split(',')
-    if int(studentLineArray[0]) > 5:
-        randNum = int(studentLineArray[0]) // 2
-    else:
-        randNum = int(studentLineArray[0]) + 264
     with open(datasetfname) as csvfile:
         readerObj = csv.reader(csvfile)
-        rows = list(readerObj)
-        targetRow = rows[randNum]
+        rows = list(readerObj)[1:]
+        targetRow = random.choice(rows)
     
     date = targetRow[1]
     time = targetRow[2]
