@@ -71,45 +71,45 @@ modules:
     name: Drone to conclusions-3
     description: Now do you get it?
 
-#- id: filesystems
-#  name: Filesystem forensics
-#  description: Dive deep into the secrets of filesystems!
-#    Use commands like dd to carve out partitions, undelete files using tools like foremost, scalpel, and extundelete, and discover
-#    the secret messages the disk holds.
-#  challenges:
-#  - id: level-1
-#    name: level1
-#    description: Basic dd ing
-#  - id: level-2
-#    name: level2
-#    description: Basic hashing
-#  - id: level-3
-#    name: level3
-#    description: Carving out MBRs
-#  - id: level-4
-#    name: level4
-#    description: Carving out partitions
-#  - id: level-5
-#    name: level5
-#    description: Carving out more paritions
-#  - id: level-6
-#    name: level6
-#    description: Looking for the words
-#  - id: level-7
-#    name: level7
-#    description: Oh Times
-#  - id: level-8
-#    name: level8
-#    description: Oh Times one more Time
-#  - id: level-9
-#    name: level9
-#    description: File necromancy
-#  - id: level-10
-#    name: level10
-#    description: Fat file necromancy
-#  - id: level-11
-#    name: level11
-#    description: Where noone has gone before
+- id: filesystems
+  name: Filesystem forensics
+  description: Dive deep into the secrets of filesystems!
+    Use commands like dd to carve out partitions, undelete files using tools like foremost, scalpel, and extundelete, and discover
+    the secret messages the disk holds.
+  challenges:
+  - id: level-1
+    name: level1
+    description: Basic dd ing
+  - id: level-2
+    name: level2
+    description: Basic hashing
+  - id: level-3
+    name: level3
+    description: Carving out MBRs
+  - id: level-4
+    name: level4
+    description: Carving out partitions
+  - id: level-5
+    name: level5
+    description: Carving out more paritions
+  - id: level-6
+    name: level6
+    description: Looking for the words
+  - id: level-7
+    name: level7
+    description: Oh Times
+  - id: level-8
+    name: level8
+    description: Oh Times one more Time
+  - id: level-9
+    name: level9
+    description: File necromancy
+  - id: level-10
+    name: level10
+    description: Fat file necromancy
+  - id: level-11
+    name: level11
+    description: Where noone has gone before
 #
 #- id: memory 
 #  name: Memory forensics
