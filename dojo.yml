@@ -70,6 +70,9 @@ modules:
   - id: level-3
     name: Drone to conclusions-3
     description: Now do you get it?
+  - id: level-4
+    name: Resident Evil
+    description: disassemble or pay!
 
 - id: filesystems
   name: Filesystem forensics
