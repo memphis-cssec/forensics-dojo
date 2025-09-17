@@ -15,6 +15,7 @@ have fun! ;)
 """
 
 dronedataset="/data/drone.zip"
+residentdataset="/data/ransomware.dd"
 dronename="Drone to Conclusions"
 
 def check(res):
