@@ -67,11 +67,26 @@ def level3():
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==msgsum)
 
+def level4():
+    lvl = f"""
+    Y0u 4r3 Pl4y1ng ... R3s1d3n7 3v1l!!!!
+    use {residentdataset}
+    I downloaded some ransomware and now my computer won't boot?
+    help me i guess?????
+    """
+    print(lvl)
+    msgsum = "49150c29111b0ca9580854e75e0b92a1"
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
+
+
 def challenge():
     lvls = {
        1: level1,
        2: level2,
        3: level3,
+       4: level4,
     }
     print(welcometxt)
     f = lvls[level]
