@@ -110,6 +110,27 @@ modules:
   - id: level-11
     name: level11
     description: Where noone has gone before
+  resources:
+  - name: "Filesystems 1"
+    type: lecture
+    video: opXeepQVhqk
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vRCeJlj6gRTB57Ce-VqeeFiL4SYrcG7JuEpaVKZODqhkLNDBMB3koNvQXce-8Neu6Rbs8n6MM9E8Tav
+  - name: "Filesystems 2"
+    type: lecture
+    video: 9B99RK-fOT8
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vRCeJlj6gRTB57Ce-VqeeFiL4SYrcG7JuEpaVKZODqhkLNDBMB3koNvQXce-8Neu6Rbs8n6MM9E8Tav
+  - name: "Filesystems 3"
+    type: lecture
+    video: 92hL_lW-0lk
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vRCeJlj6gRTB57Ce-VqeeFiL4SYrcG7JuEpaVKZODqhkLNDBMB3koNvQXce-8Neu6Rbs8n6MM9E8Tav
+  - name: "Tools"
+    type: lecture
+    video: tCWOwDLDJjk
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vTyjAtg_t7shzxHwgF1b7iStjtwQ2VZ7PzeIY8tMwzjMydjLONrQP2xCBpiPYQuUc1yv2asn7ZkmnUJ
 #
 #- id: memory 
 #  name: Memory forensics
