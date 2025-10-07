@@ -205,3 +205,9 @@ modules:
   - id: level-6
     name: level6
     description: Use what you have to access an external service. 
+  resources:
+  - name: "Network"
+    type: lecture
+    video: wt8h0eJzg0I
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vR3YP7dZ8-fRsf2agHxhGqZOT45eDVkSR0DsXnFSkqidpakZgp3fq51YmZofBaZvgm_vO4RrRTENgFd
