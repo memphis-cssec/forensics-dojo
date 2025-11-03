@@ -1,0 +1,99 @@
+#!/opt/pwn.college/python
+
+import pathlib
+import random
+import hashlib
+import tempfile
+import subprocess
+import sys
+
+global flag
+
+welcomemsg = """ welcome to your steg module ;)
+things here are NOT AS thEy seem. or Are they?
+the ghostS whisper codes in front of Your very eyes.
+can you hear them and control your fate once more?
+
+HEHEHE
+
+In this module you can use tools like steghide, stegsolve, zsteg
+image processing tools, debuggers, or even writing some custom code
+to help you reveal the flags.
+
+best of luck.
+"""
+
+config = (pathlib.Path(__file__).parent / ".config").read_text()
+level = int(config)
+
+fname1="/data/fish1.jpg"
+fname2="/data/fish2.jpg"
+fname3="/data/fish3.jpg"
+fname4="/data/ab.jpg"
+fname5="/data/leaky"
+
+with open("/flag") as f:
+    buf=f.read()
+    random.seed(buf)
+    flag = str(buf)
+
+def check(res):
+    if res == True:
+        print(f"\nCongrats! Here is your flag:{flag}")
+    else:
+        print("\nTry again")
+
+def hashinputagainst(hash):
+    userinp = sys.stdin.buffer.read(32*1024*1024) # 32mb max
+    maybe = hashlib.md5(userinp).hexdigest()
+    check(maybe==hash)
+
+def level1(): 
+    lvl1sum = "da392582f33a9b1f811778ec20d33363"
+    print(f"{fname1} might not be what it seems")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl1sum)
+
+def level2(): 
+    lvl2sum = "ce87b38e42b0abf9d3d43bc55a6ef596"
+    print(f"{fname2} might not be what it seems")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl2sum)
+
+def level3(): 
+    lvl3sum = "fc5777efbc234c55947bd7bdbaddd6f0"
+    print(f"{fname3} might not be what it seems")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl3sum)
+
+def level4(): 
+    lvl1sum = "95ddc6a3a3d4c23572fd8ea26380b50b"
+    print(f"{fname4} might not be what it seems")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl4sum)
+
+def level5(): 
+    lvl1sum = "5b4e009d23b7183a646009539979af42"
+    print(f"{fname5} is the reason my mom said i shouldn't be a game developer.")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl5sum)
+
+
+def challenge():
+    lvls = {
+       1: level1,
+       2: level2,
+       3: level3,
+       4: level4,
+       5: level5,
+    }
+    print(welcomemsg)
+    f = lvls[level]
+    f()
+
+challenge()

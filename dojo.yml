@@ -211,3 +211,33 @@ modules:
     video: wt8h0eJzg0I
     playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
     slides: e/2PACX-1vR3YP7dZ8-fRsf2agHxhGqZOT45eDVkSR0DsXnFSkqidpakZgp3fq51YmZofBaZvgm_vO4RrRTENgFd
+- id: steg
+  name: steganography
+  description: The secrets of our universe are hidden in plain sight.
+  challenges:
+  - id: level-1
+    name: level1
+    description: Casual Steg
+  - id: level-2
+    name: level2
+    description: More Casual Steg
+  - id: level-3
+    name: level3
+    description: Slightly less casual steg
+  - id: level-4
+    name: level4
+    description: Stylish steg
+  - id: level-5
+    name: level5
+    description: Slightly spicy steg
+  resources:
+  - name: "steganography"
+    type: lecture
+    video: _cjK-clecFA
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vT95tk3YdDKQ_ef9zDqDhf_NVzIuewxXUaxrQW2XoAIctyeNSRTUEU0ix603Sr4ShI3UsNqENctm_Xk
+  - name: "steganalysis"
+    type: lecture
+    video: EXgFLVN-ZKk
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vT95tk3YdDKQ_ef9zDqDhf_NVzIuewxXUaxrQW2XoAIctyeNSRTUEU0ix603Sr4ShI3UsNqENctm_Xk
