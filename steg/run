@@ -27,7 +27,7 @@ config = (pathlib.Path(__file__).parent / ".config").read_text()
 level = int(config)
 
 fname1="/data/fish1.jpg"
-fname2="/data/fish2.jpg"
+fname2="/data/fish2.png"
 fname3="/data/fish3.jpg"
 fname4="/data/ab.jpg"
 fname5="/data/leaky"
