@@ -70,14 +70,14 @@ def level3():
     check(maybe==lvl3sum)
 
 def level4(): 
-    lvl1sum = "95ddc6a3a3d4c23572fd8ea26380b50b"
+    lvl4sum = "95ddc6a3a3d4c23572fd8ea26380b50b"
     print(f"{fname4} might not be what it seems")
     userinp = input("flag>").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==lvl4sum)
 
 def level5(): 
-    lvl1sum = "5b4e009d23b7183a646009539979af42"
+    lvl5sum = "5b4e009d23b7183a646009539979af42"
     print(f"{fname5} is the reason my mom said i shouldn't be a game developer.")
     userinp = input("flag>").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
