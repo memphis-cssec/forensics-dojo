@@ -11,8 +11,8 @@ global flag
 
 welcomemsg = """ welcome to the android module ;)
 here you will analyze a totally fine android application.
-The tools you might want to use are apktool, jadx but also
-simple things like strings, or database clients.
+The tools you might want to use are apktool, jadx (under /opt) 
+but also simple things like strings, or database clients.
 
 So i downloaded this great offline calculator app for my 
 new phone. i just installed it and off i went, to calculate some
