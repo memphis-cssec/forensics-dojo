@@ -241,3 +241,22 @@ modules:
     video: EXgFLVN-ZKk
     playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
     slides: e/2PACX-1vT95tk3YdDKQ_ef9zDqDhf_NVzIuewxXUaxrQW2XoAIctyeNSRTUEU0ix603Sr4ShI3UsNqENctm_Xk
+- id: android
+  name: android forensics
+  description: is your android serving only you? click here to find out!
+  challenges:
+  - id: level-1
+    name: level1
+    description: the developer says to the OS what it should be able to do.
+  - id: level-2
+    name: level2
+    description: c2 tells to the OS what it should really do
+  - id: level-3
+    name: level3
+    description: conf says to the app how to talk to c2
+  resources:
+  - name: "android"
+    type: lecture
+    video: hKy4fEB2KRI
+    playlist: PL3u0nmwpyGu5of2ddXPnoUEk7fbvnyvoW
+    slides: e/2PACX-1vQ7im5-Q-wyEwGnlEz7H-Vl6b3mxCjbcwOqEgm-Rlu6aMM7tJ4h7b2uF9d37SgmYZ_ZaGZj0MxlYQHZ

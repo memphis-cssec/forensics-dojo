@@ -1,0 +1,75 @@
+#!/opt/pwn.college/python
+
+import pathlib
+import random
+import hashlib
+import tempfile
+import subprocess
+import sys
+
+global flag
+
+welcomemsg = """ welcome to the android module ;)
+here you will analyze a totally fine android application.
+The tools you might want to use are apktool, jadx but also
+simple things like strings, or database clients.
+
+So i downloaded this great offline calculator app for my 
+new phone. i just installed it and off i went, to calculate some
+of my favorite cosines.
+but my data plan is running low? lol.
+"""
+
+config = (pathlib.Path(__file__).parent / ".config").read_text()
+level = int(config)
+
+fname="/data/calculator.apk"
+
+with open("/flag") as f:
+    buf=f.read()
+    random.seed(buf)
+    flag = str(buf)
+
+def check(res):
+    if res == True:
+        print(f"\nCongrats! Here is your flag:{flag}")
+    else:
+        print("\nTry again")
+
+def hashinputagainst(hash):
+    userinp = sys.stdin.buffer.read(32*1024*1024) # 32mb max
+    maybe = hashlib.md5(userinp).hexdigest()
+    check(maybe==hash)
+
+def level1(): 
+    lvl1sum = "a35a70c8faeb3b1fa6e5f7c59507e23e"
+    print(f"{fname} is an offline app. is there a permission that sticks out?")
+    userinp = input("permission>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl1sum)
+
+def level2(): 
+    lvl2sum = "755b40b34ee9f719dd5be7f3f6f982dc"
+    print(f"{fname} might not be what it seems. does it contacting anyone sketchy?)
+    userinp = input("URL>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl2sum)
+
+def level3(): 
+    lvl3sum = "ce0d99b5bbe80b7fff67c292c5c86a68"
+    print(f"they say that in {fname} all the cool kids know where the setting databases are.")
+    userinp = input("flag>").strip()
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==lvl3sum)
+
+def challenge():
+    lvls = {
+       1: level1,
+       2: level2,
+       3: level3,
+    }
+    print(welcomemsg)
+    f = lvls[level]
+    f()
+
+challenge()
