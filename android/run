@@ -50,7 +50,7 @@ def level1():
 
 def level2(): 
     lvl2sum = "755b40b34ee9f719dd5be7f3f6f982dc"
-    print(f"{fname} might not be what it seems. does it contacting anyone sketchy?)
+    print(f"{fname} might not be what it seems. does it contacting anyone sketchy?")
     userinp = input("URL>").strip()
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==lvl2sum)
