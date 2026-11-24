@@ -17,6 +17,7 @@ have fun! ;)
 dronedataset="/data/drone.zip"
 residentdataset="/data/ransomware.dd"
 dronename="Drone to Conclusions"
+gofiguredataset="/data/gofigure.mem"
 
 def check(res):
     if res == True:
@@ -74,6 +75,7 @@ def level4():
     use {residentdataset}
     I downloaded some ransomware and now my computer won't boot?
     help me i guess?????
+    what was the content of that file?
     """
     print(lvl)
     msgsum = "49150c29111b0ca9580854e75e0b92a1"
@@ -81,6 +83,45 @@ def level4():
     maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
     check(maybe==msgsum)
 
+def level5():
+    lvl = f"""
+    Our client's network was infected with this implant that wiped
+    out everything on the disks. It seems to be written in golang.
+    I had just finished reading the new 
+    "Memory Forensics Techniques for Automated Detection and Analysis of Go Malware"
+    from Hala Ali, Andrew Case and Irfan Ahmed 
+    (https://dfrws.org/wp-content/uploads/2026/04/DFRWS_USA_2026_Camera_Ready_Paper_19.pdf)
+    when i got the call. Got my trusty cold air spray and started spraying every memory
+    chip i could find. Since your username is hacker@ maybe you can help me out make sense of 
+    the capture {gofiguredataset}?
+
+    for this level, you don't have to get into a heap of trouble to get there.
+    """
+    print(lvl)
+    msgsum = "181102929716d842863c373ee1c6c387"
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
+
+def level6():
+    lvl = f"""
+    Our client's network was infected with this implant that wiped
+    out everything on the disks. It seems to be written in golang.
+    I had just finished reading the new 
+    "Memory Forensics Techniques for Automated Detection and Analysis of Go Malware"
+    from Hala Ali, Andrew Case and Irfan Ahmed 
+    (https://dfrws.org/wp-content/uploads/2026/04/DFRWS_USA_2026_Camera_Ready_Paper_19.pdf)
+    when i got the call. Got my trusty cold air spray and started spraying every memory
+    chip i could find. Since your username is hacker@ maybe you can help me out make sense of 
+    the capture {gofiguredataset}?
+
+    for this level, you need pull the thread to completion. good luck.
+    """
+    print(lvl)
+    msgsum = "d7e99bd986b32ff0b9b1374e8e9932a0"
+    userinp = input(">").strip().strip('\n')
+    maybe = hashlib.md5(userinp.encode('utf-8')).hexdigest()
+    check(maybe==msgsum)
 
 def challenge():
     lvls = {
@@ -88,6 +129,8 @@ def challenge():
        2: level2,
        3: level3,
        4: level4,
+       5: level5,
+       6: level6,
     }
     print(welcometxt)
     f = lvls[level]

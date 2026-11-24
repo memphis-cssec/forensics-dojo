@@ -73,6 +73,12 @@ modules:
   - id: level-4
     name: Resident Evil
     description: disassemble or pay!
+  - id: level-5
+    name: Go Figure-1
+    description: Is that a heap of gophers? Better read that paper!
+  - id: level-6
+    name: Go Figure-2
+    description: Oh the humanity! They are wiping my files!
 
 - id: filesystems
   name: Filesystem forensics
